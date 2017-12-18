@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wiki viewer</title>
   <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/normalize.css">
-  <!--Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+      <header>
+      <div class="header">
+      <h1><span class="wiki-logo"><i class="fa fa-wikipedia-w fa-2x" aria-hidden="true"></i></span>ikipedia Viewer</h1>
+      <hr>
+  </div>
+    </header>
+  <div class="random">
+    <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><button class="btn btn-primary btn-lg">Random Wiki Article </button></a>
+  </div>
+  <form action="#">
+    <div class="search-box">
+      <input id="search-field" type="text" placeholder="Search for artilce" autocomplete="off">
+      <button id="submit-button" class="btn btn-primary btn-lg submit-button" type="submit">Search</button>
+      <button id="clear-button" class="btn btn-primary btn-lg clear-button" type="submit">Clear</button>
+    </div>
+  </form>
+  <div class="container" id="results-list">
+  </div>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-
   <script src="js/index.js"></script>
-
-</head>
-<body>
-  <div class="header">
-      <header>
-        <h1><span class="wiki-logo"><i class="fa fa-wikipedia-w fa-2x" aria-hidden="true"></i></span>ikipedia Viewer</h1>
-        <hr>
-      </header>
-    </div>
-    <div class="random">
-      <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><button class="btn btn-primary btn-lg">Random Wiki Article </button></a>
-    </div>
-    <br>
-    <form action="#">
-      <div class="search-box">
-        <input id="search-field" type="text" placeholder="Search for artilce" autocomplete="off">
-        <button id="submit-button" class="btn btn-primary btn-lg submit-button" type="submit">Search</button>
-        <button id="clear-button" class="btn btn-primary btn-lg clear-button" type="submit">Clear</button>
-      </div>
-    </form>
-    <div class="container" id="results-list">
-    </div>
 </body>
-
 </html>

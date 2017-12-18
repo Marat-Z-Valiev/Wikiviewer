@@ -1,4 +1,7 @@
+//Viariables
 @import url("https://fonts.googleapis.com/css?family=Oswald");
+$main-font: 'Oswald', sans-serif;
+
 body {
   background-image: url("../images/Wikipedia-logo.jpg");
   background-repeat: no-repeat;
@@ -15,10 +18,11 @@ body {
 
 h1 {
   padding-bottom: 20px;
-  font-family: "Oswald", sans-serif;
+  font-family: $main-font;
   text-align: center;
 }
 
+//Buttons
 .random {
   font-size: 20px;
   justify-content: center;
@@ -39,6 +43,7 @@ h1 {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#0483a0), to(#31b2c3));
 }
 
+//Search field
 .search-box {
   margin-top: 20px;
 }
@@ -63,6 +68,7 @@ h1 {
   margin-left: 5px;
 }
 
+//Results
 #results-list {
   margin-top: 10px;
 }
@@ -80,6 +86,7 @@ h1 {
   font-size: 12px;
 }
 
+//Autocomplete
 .ui-autocomplete {
   position: absolute;
   top: 100%;
@@ -105,44 +112,46 @@ h1 {
   background-clip: padding-box;
   *border-right-width: 2px;
   *border-bottom-width: 2px;
-}
 
-.ui-autocomplete .ui-menu-item.ui-state-focus {
-  background-color: #31b2c3;
-  border: 1px solid #999999;
-  margin: -1px;
+  .ui-menu-item.ui-state-focus {
+    background-color: #31b2c3;
+    border: 1px solid #999999;
+    margin: -1px;
+  }
 }
 
 .ui-helper-hidden-accessible {
   display: none;
 }
 
+//UI menu
 .ui-menu {
   list-style: none;
   padding: 0;
   margin: 0;
   display: block;
   outline: none;
+
+  .ui-menu-item {
+    position: relative;
+    margin: 0;
+    padding: 3px 1em 3px .4em;
+    cursor: pointer;
+    min-height: 0;
+  }
 }
 
-.ui-menu .ui-menu-item {
-  position: relative;
-  margin: 0;
-  padding: 3px 1em 3px .4em;
-  cursor: pointer;
-  min-height: 0;
-}
-
+//Responsive design
 @media screen and (max-width: 360px) {
   body {
     background-attachment: fixed;
   }
+
   #search-field {
     width: 300px;
     margin-bottom: 20px;
   }
 }
-
 @media screen and (max-width: 767px) {
   body {
     background-image: url("../images/Wikipedia-logo.jpg");
@@ -153,6 +162,7 @@ h1 {
     background-size: cover;
     background-position: center;
   }
+
   #search-field {
     border-style: solid;
     border-color: #0483a0;
