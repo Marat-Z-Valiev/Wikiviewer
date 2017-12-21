@@ -144,10 +144,6 @@ body {
 
 //Responsive design
 @media screen and (max-width: 360px) {
-  body {
-    background-attachment: fixed;
-  }
-
   #search-field {
     width: 300px;
     margin-bottom: 20px;
@@ -155,11 +151,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   body {
-    background-image: url("../images/Wikipedia-logo.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
   }
