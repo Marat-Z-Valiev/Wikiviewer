@@ -144,8 +144,10 @@ body {
 @media screen and (max-width: 767px) {
   body {
     background-attachment: fixed;
-    background-size: cover;
     background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
   }
   #search-field {
     border-style: solid;
