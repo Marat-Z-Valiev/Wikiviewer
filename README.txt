@@ -1,0 +1,1 @@
+Wikipedia Viewer allows the user to search Wikipedia articles using Wikipedia API.
