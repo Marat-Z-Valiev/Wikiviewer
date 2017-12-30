@@ -22,7 +22,7 @@ $(document).ready(function() {
         console.log(response);
         response.query.pages.forEach(function(resp) {
           $('#results-list').append(
-            "<div id='results'><a href='" + resp.fullurl + "' target='_blank'><h3>" + resp.title + "</h3></a><p>" + resp.extract + "</p></div>");
+            "<div id='results'><a href='" + resp.fullurl + "' target='_blank'><h2>" + resp.title + "</h2></a><p>" + resp.extract + "</p></div>");
         });
       });
   }); // search
