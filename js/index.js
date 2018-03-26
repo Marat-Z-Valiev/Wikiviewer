@@ -1,9 +1,13 @@
-var apiURL = "https://en.wikipedia.org/w/api.php?callback=?";
+const apiURL = "https://en.wikipedia.org/w/api.php?callback=?";
+const resultsList = $('#results-list');
+const submitButton = $('#submit-button');
+const searchField = $('#search-field');
+const clearButton = $('#clear-button');
 
 $(document).ready(function() {
 
   $(document).on('click', '#submit-button, .ui-menu-item', function() {
-    $('#results-list').empty(); // clear prior search results
+    resultsList.empty(); // clear prior search results
     $.getJSON(apiURL, {
         action: 'query',
         format: 'json',
@@ -21,22 +25,21 @@ $(document).ready(function() {
       .success(function(response) {
         console.log(response);
         response.query.pages.forEach(function(resp) {
-          $('#results-list').append(
-            "<div id='results'><a href='" + resp.fullurl + "' target='_blank'><h2>" + resp.title + "</h2></a><p>" + resp.extract + "</p></div>");
+          resultsList.append(`<div id="results"><a href="${resp.fullurl}" target="_blank"><h2>${resp.title}</h2></a><p>${resp.extract}</p></div>`);
         });
       });
   }); // search
 
   // trigger submit on use of enter key
-  $("#search-field").keyup(function(event) {
+  searchField.keyup(function(event) {
     if (event.keyCode == 13) {
       event.preventDefault();
-      $("#submit-button").click();
+      submitButton.click();
     }
   });
 
   //Autocomplete
-  $("#search-field").autocomplete({
+  searchField.autocomplete({
     source: function(request, response) {
       $.ajax({
         url: "https://en.wikipedia.org/w/api.php",
@@ -54,8 +57,8 @@ $(document).ready(function() {
   });
 
   //Clear text in the search field and search results
-  $("#clear-button").click(function() {
-    $("#search-field").val("");
-    $("#results-list").empty();
+  clearButton.click(function() {
+    searchField.val("");
+    resultsList.empty();
   });
 });
