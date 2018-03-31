@@ -4,7 +4,7 @@ const submitButton = $('#submit-button');
 const searchField = $('#search-field');
 const clearButton = $('#clear-button');
 
-$(document).ready(function() {
+$(function() {
 
   $(document).on('click', '#submit-button, .ui-menu-item', function() {
     resultsList.empty(); // clear prior search results
